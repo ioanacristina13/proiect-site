@@ -1,0 +1,77 @@
+/* Fundal negru pentru întreaga pagină */
+.home-container {
+    background-color: black;
+    color: gold; /* Auriu pentru text */
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh; /* Acoperă întreaga înălțime a ecranului */
+  }
+  
+  /* Imagine de fundal */
+  .home-wallpaper {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover; /* Ajustează imaginea pentru a arăta bine */
+    border-radius: 10px;
+  }
+  
+  /* Titlu principal */
+  .home-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Text de bun venit cu font de mână */
+  .home-welcome {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: "Brush Script MT", cursive;
+    margin-top: 10px;
+  }
+  .section-title {
+    font-size: 2rem;
+    color: gold;
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  /* Descriere secțiune */
+  .section-description {
+    font-size: 1.2rem;
+    color: gold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-card {
+    width: 100%;
+    max-width: 250px;
+    background: linear-gradient(135deg, #C0C0C0, #DCDCDC); /* Gradient argintiu */
+    border: 1px solid gold;
+    color: black; /* Text negru */
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px gold;
+  }
+  
+  /* Imaginea din card */
+  .recipe-card img {
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  /* Container pentru calorii și timp */
+  .recipe-card .card-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: black; /* Text negru */
+    font-weight: bold;
+    margin-top: 5px;
+  }

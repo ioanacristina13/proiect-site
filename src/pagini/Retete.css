@@ -1,0 +1,115 @@
+/* Stiluri generale pentru pagina de rețete */
+body {
+    background-color: #000000; /* Fundal negru */
+    color: gold; /* Text auriu */
+    font-family: 'Arial', sans-serif; /* Font standard */
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: gold;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: gold;
+  }
+  
+  /* Stil pentru cardurile de rețete */
+  .card {
+    background-color: #D3D3D3; /* Fundal argintiu pentru carduri */
+    color: black; /* Text negru în carduri */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Mișcare ușoară la hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Umbră la hover */
+  }
+  
+  /* Stil pentru titlurile cardurilor */
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Stil pentru textul din interiorul cardurilor */
+  .card-text {
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  /* Stil pentru link-ul din card */
+  .card a {
+    color: gold;
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+  
+  .card a:hover {
+    color: #FFD700; /* Schimbă culoarea link-ului la hover */
+  }
+  
+  /* Stiluri pentru rândurile de rețete */
+  .row {
+    margin-top: 20px;
+  }
+  
+  /* Marginile pentru carduri */
+  .col {
+    margin-bottom: 20px;
+  }
+  
+  /* Centrarea secțiunii cu rețete */
+  .text-center {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Stiluri pentru butonul din partea de jos (la finalul paginii) */
+  button {
+    background-color: gold;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #FFD700; /* Culoare mai intensă la hover */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  .recipe-details {
+    background-color: #000000; /* Fundal negru pentru detalii */
+    padding: 20px;
+    border-radius: 10px;
+    color: gold; /* Text auriu */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Umbră ușoară pentru detalii */
+  }
+  
+  .recipe-details h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-details p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+  
