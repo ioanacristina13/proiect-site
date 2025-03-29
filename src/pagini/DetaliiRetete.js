@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import { useRecipes } from "../contextApi/reteteContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavorites, removeFromFavorites } from "../redux/favoritesSlice";
 
 const RetetaDetail = () => {
-  const { id } = useParams(); // Obținem ID-ul din URL
-  const { recipes } = useRecipes(); // Accesăm rețetele din context
+  const { id } = useParams();
+  const recipes = useSelector((state) => state.recipes.recipes); // Luăm rețetele din Redux
   const [recipe, setRecipe] = useState(null);
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites);
 
   useEffect(() => {
-    // Căutăm rețeta pe baza ID-ului din URL
     const selectedRecipe = recipes.find((r) => r.id.toString() === id);
     setRecipe(selectedRecipe);
   }, [id, recipes]);
 
-  if (!recipe) return <div>Loading...</div>; // Afișăm un mesaj de încărcare până când rețeta este găsită
+  if (!recipe) return <div>Loading...</div>;
+
+  const isFavorite = favorites.some((fav) => fav.id === recipe.id);
 
   return (
     <div style={{ color: "gold", backgroundColor: "black", padding: "20px" }}>
-      {/* Butonul "Inapoi" */}
       <Link to="/retete">
         <button
           style={{
@@ -32,7 +34,6 @@ const RetetaDetail = () => {
         </button>
       </Link>
 
-      {/* Detaliile rețetei */}
       <div
         style={{
           marginBottom: "30px",
@@ -46,11 +47,7 @@ const RetetaDetail = () => {
         <img
           src={recipe.image}
           alt={recipe.name}
-          style={{
-            width: "30%",
-            height: "auto",
-            marginBottom: "20px",
-          }}
+          style={{ width: "30%", height: "auto", marginBottom: "20px" }}
         />
         <h2>{recipe.name}</h2>
         <p>
@@ -69,13 +66,25 @@ const RetetaDetail = () => {
           <strong>Cuisine:</strong> {recipe.cuisine}
         </p>
 
-        {/* Instrucțiuni */}
-        <h3>Instrucțiuni:</h3>
-        <ol>
-          {recipe.instructions.map((step, index) => (
-            <li key={index}>{step}</li>
-          ))}
-        </ol>
+        {/* Butonul de adăugare/ștergere din favorite */}
+        <button
+          style={{
+            backgroundColor: isFavorite ? "red" : "green",
+            color: "white",
+            padding: "10px",
+            marginTop: "20px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            if (isFavorite) {
+              dispatch(removeFromFavorites(recipe.id));
+            } else {
+              dispatch(addToFavorites(recipe));
+            }
+          }}
+        >
+          {isFavorite ? "Șterge din favorite ❤️" : "Adaugă la favorite 💚"}
+        </button>
       </div>
     </div>
   );

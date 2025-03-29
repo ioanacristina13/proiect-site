@@ -18,6 +18,9 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/retete">
               Retete
             </Nav.Link>
+            <Nav.Link as={Link} to="/favorite">
+              Favorite
+            </Nav.Link>
             <Nav.Link as={Link} to="/about">
               Despre noi
             </Nav.Link>
